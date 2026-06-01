@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Համլետ & Լիլիա — Պահպանիր օրը</title>
+<title>Համլետ & Լիլիա — Save the Date</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Cinzel:wght@300;400&family=Noto+Serif+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -270,12 +270,17 @@
   }
 
   .hero-card {
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+  padding: 40px 24px 60px;
+}
 
   .ornament {
     display: flex;
@@ -931,8 +936,10 @@ section.hero {
 
     <div class="card-reveal">
       <div style="background:var(--cream);padding:18px 24px;text-align:center;border:1px solid rgba(201,169,110,0.3);box-shadow:0 10px 40px rgba(74,55,40,0.15)">
-        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--warm-brown);opacity:0.7;margin-bottom:8px">ՊԱՀՊԱՆԻՐ ՕՐԸ</div>
-        <div style="font-family:'Noto Serif Armenian',serif;font-weight:300;font-size:26px;color:var(--warm-brown)">Համլետ & Լիլիա</div>
+        <div class = "invitation-text">SAVE THE DATE</div>
+        <!-- <div style="font-family:'Noto Serif Armenian',serif;font-weight:300;font-size:26px;color:var(--warm-brown)">Համլետ & Լիլիա</div> -->
+        <div class = "invitation-text">Hamlet & Lilia</div>
+
       </div>
     </div>
 
@@ -947,47 +954,39 @@ section.hero {
 
     <!-- HERO -->
     <section class="hero">
-      <div class="glow-orb" style="width:350px;height:350px;background:radial-gradient(circle,var(--gold-light),transparent);top:10%;left:55%;"></div>
-      <div class="glow-orb" style="width:280px;height:280px;background:radial-gradient(circle,var(--champagne),transparent);top:55%;left:5%;animation-delay:3s;"></div>
+  <div class="hero-card">
 
-      <div class="hero-card">
-        <div class="ornament">
-          <div class="ornament-line"></div>
-          <div class="ornament-diamond"></div>
-          <div class="ornament-line"></div>
-        </div>
+    <!-- TOP: Save the date -->
+    <div>
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line"></div>
+      </div>
+      <div class="save-the-date-tag">Save the Date</div>
+    </div>
 
-        <div class="save-the-date-tag">Պահպանիր օրը</div>
+    <!-- MIDDLE + BOTTOM pushed down -->
+    <div style="margin-top: auto; padding-top: 40px;">
 
+      <!-- Names -->
+      <div>
         <div class="couple-names">Համլետ</div>
         <span class="ampersand">&</span>
         <div class="couple-names">Լիլիա</div>
+      </div>
 
+      <!-- Honour text -->
+      <div style="margin-top: 100px;">
         <div class="invitation-text">
-          request the honour of your presence<br>at the celebration of their marriage
-        </div>
-
-        <div class="date-block">
-          <div class="date-item">
-            <div class="date-label">Day</div>
-            <div class="date-value">Saturday</div>
-          </div>
-          <div class="date-item">
-            <div class="date-label">Date</div>
-            <div class="date-value">[DD · MM · YYYY]</div>
-          </div>
-          <div class="date-item">
-            <div class="date-label">Location</div>
-            <div class="date-value">[City]</div>
-          </div>
+          Հրավիրում ենք կիսվել մեր ուրախությամբ<br>
         </div>
       </div>
 
-      <div class="scroll-hint">
-        <span>Scroll to discover</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
+    </div>
+
+  </div>
+</section>
 
     <!-- PHOTO GALLERY -->
     <section class="gallery-section">
