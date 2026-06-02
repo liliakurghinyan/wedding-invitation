@@ -906,7 +906,7 @@ section.hero {
 
 <!-- Envelope Stage -->
 <div id="envelope-stage">
-  <div class="envelope-container" id="envelope" onclick="openEnvelope()">
+  <div class="envelope-container" id="envelope" onclick="openEnvelope(true)">
     <svg class="envelope-svg" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
       <rect width="420" height="300" rx="4" fill="#f2ead8"/>
       <polygon points="0,300 210,160 420,300" fill="#ede0cc"/>
@@ -1144,21 +1144,19 @@ section.hero {
   // Envelope
   let opened = false;
 
-  function openEnvelope() {
+  function openEnvelope(fromUser = false) {
     if (opened) return;
     opened = true;
     document.getElementById('envelope').classList.add('opening');
 
-    // Start music on user interaction
-    audio.play();
-    icon.textContent = '⏸';
-    btn.style.opacity = '1';
-    musicPlaying = true;
+    // Only start music if triggered by real tap
+    if (fromUser) {
+      audio.play().then(() => setMusicState(true)).catch(() => {});
+    }
 
     setTimeout(() => {
       document.getElementById('envelope-stage').classList.add('hidden');
-      const content = document.getElementById('main-content');
-      content.classList.add('visible');
+      document.getElementById('main-content').classList.add('visible');
       document.body.style.overflow = '';
       initReveal();
     }, 2400);
