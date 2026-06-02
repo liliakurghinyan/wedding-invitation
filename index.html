@@ -1090,7 +1090,31 @@ section.hero {
 
   </div>
 </div>
+<!-- Music Player -->
+  <div id="music-btn" onclick="toggleMusic()" style="
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(249,244,239,0.9);
+    border: 1px solid rgba(201,169,110,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(74,55,40,0.15);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  ">
+    <span id="music-icon" style="font-size:18px;">♪</span>
+  </div>
 
+  <audio id="bg-music" loop>
+    <source src="CHRISTINA PERRI - A THOUSAND YEARS (INSTRUMENTAL).mp3" type="audio/mpeg">
+  </audio>
 
 <script>
   // Petals
@@ -1121,6 +1145,13 @@ section.hero {
     if (opened) return;
     opened = true;
     document.getElementById('envelope').classList.add('opening');
+
+    // Start music on user interaction
+    audio.play();
+    icon.textContent = '⏸';
+    btn.style.opacity = '1';
+    musicPlaying = true;
+
     setTimeout(() => {
       document.getElementById('envelope-stage').classList.add('hidden');
       const content = document.getElementById('main-content');
@@ -1157,6 +1188,27 @@ section.hero {
   document.addEventListener('keydown', e => {
     if ((e.key === 'Enter' || e.key === ' ') && !opened) openEnvelope();
   });
+  // Music toggle
+  let musicPlaying = false;
+  const audio = document.getElementById('bg-music');
+  const icon = document.getElementById('music-icon');
+  const btn = document.getElementById('music-btn');
+
+  audio.volume = 0.4; // 0.0 to 1.0
+
+  function toggleMusic() {
+    if (musicPlaying) {
+      audio.pause();
+      icon.textContent = '♪';
+      btn.style.opacity = '0.5';
+      musicPlaying = false;
+    } else {
+      audio.play();
+      icon.textContent = '⏸';
+      btn.style.opacity = '1';
+      musicPlaying = true;
+    }
+  }
 </script>
 </body>
 </html>
