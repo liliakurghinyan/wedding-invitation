@@ -691,7 +691,7 @@ section.hero {
   .rsvp-card::after  { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
 
   .rsvp-body {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif Armenian', serif;
     font-size: 16px;
     font-style: italic;
     color: var(--warm-brown);
@@ -1027,7 +1027,8 @@ section.hero {
     <section>
       <div class="section-inner reveal">
         <div class="section-title">Մանրամասներ</div>
-        <div class="detail-value">Հուլիս 20, 2026</div>
+        <!-- <div class="detail-value">Հուլիս 20, 2026</div> -->
+        <div class = "rsvp-body">Հուլիս 20, 2026</div>
         <div class="section-divider">
           <div class="section-divider-line"></div>
           <div class="section-divider-ornament">✦</div>
@@ -1048,7 +1049,7 @@ section.hero {
         </div>
         <div class="detail-card">
           <span class="detail-icon">❧</span>
-          <div class="detail-value">Հանդիսությունը<br>Avalon Hall & Restaurant<br>17:30<br><span style="font-size:14px;opacity:0.7">📍 1 Ankaxutyan Street, Aramus 2201</span></div>
+          <div class="detail-value">Հանդիսությունը<br>Avalon Hall & Restaurant<br>18:00<br><span style="font-size:14px;opacity:0.7">📍 1 Ankaxutyan Street, Aramus 2201</span></div>
         </div>
         <div class="detail-card">
           <span class="detail-icon">♔</span>
@@ -1204,7 +1205,7 @@ section.hero {
       musicPlaying = false;
     } else {
       audio.play();
-      icon.textContent = '⏸';
+      icon.textContent = '⏸︎';
       btn.style.opacity = '1';
       musicPlaying = true;
     }
