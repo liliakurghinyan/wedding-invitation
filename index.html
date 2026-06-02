@@ -66,7 +66,12 @@
   padding: 0;     /* ← add this */
   top: 0;         /* ← add this */
 }
-
+  body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
   /* ── SILK BACKGROUND TEXTURE ── */
   .silk-bg {
     position: fixed;
@@ -1259,12 +1264,12 @@ section.hero {
     setTimeout(() => {
       document.getElementById('envelope-stage').classList.add('hidden');
       document.getElementById('main-content').classList.add('visible');
-      document.body.style.overflow = '';
+      document.body.classList.remove('no-scroll');
       initReveal();
     }, 2400);
   }
 
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('no-scroll');
 
   // Auto-open after 6s
   setTimeout(() => { if (!opened) openEnvelope(); }, 6000);
